@@ -1,0 +1,79 @@
+@use "../../../global-styles/abstracts" as a;
+
+.background-container {
+  // background-color: a.$color-primary-blue-dark;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($color: a.$color-primary-white, $alpha: 0.8);
+}
+
+.container {
+  width: 140rem;
+  margin: 0 auto;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  & img {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.links-container {
+  display: flex;
+
+  & a,
+  & a:link,
+  & a:visited {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: a.$color-primary-blue-dark;
+    padding: 2rem 3rem;
+    border-top: transparent solid 2px;
+    transition: all 0.3s;
+    letter-spacing: 2px;
+    text-decoration: underline transparent;
+
+    & svg {
+      width: 3rem;
+      color: a.$color-secondary;
+    }
+  }
+
+  & a:hover,
+  & a:active {
+    // background-color: rgba($color: a.$color-secondary, $alpha: 0.1);
+    text-decoration: underline rgba($color: a.$color-secondary, $alpha: 0.5);
+  }
+}
+
+.input-cities-box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.button-bookmark {
+  height: 4rem;
+  width: 4rem;
+}
+
+.bookmark-icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-mat-form-field {
+  transform: translateY(1.3rem) !important;
+}
