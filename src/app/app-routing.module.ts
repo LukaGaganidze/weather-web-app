@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CityWeatherComponent } from './pages/city-weather/city-weather.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponenet } from './pages/home-componenet/home-componenet.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: HomeComponenet,
   },
   {
     path: 'location',

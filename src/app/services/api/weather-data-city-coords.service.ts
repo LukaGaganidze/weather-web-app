@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
 
-import { LatLngObj } from 'src/app/pages/home/home-types';
+import { LatLngObj } from 'src/app/pages/city-weather/home-types';
 import { filter, map } from 'rxjs';
 
 import { WeatherDataCityCoordsInterface } from './weather-data-types';
@@ -23,7 +23,6 @@ export class WeatherDataCityCoordsService {
       )
       .pipe(
         filter((data) => {
-          console.log(data);
           return data.sys.country !== undefined;
         }),
         map((data) => {
