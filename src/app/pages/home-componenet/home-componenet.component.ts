@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class HomeComponenet implements OnInit {
   constructor(private router: Router) {}
   ngOnInit(): void {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         (position: GeolocationPosition) => {

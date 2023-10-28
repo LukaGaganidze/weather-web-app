@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { WeatherDataCityInputService } from 'src/app/services/api/weather-data-city-input.service';
 import { WeatherDataCityCoordsInterfaceFiltered } from 'src/app/services/api/weather-data-types';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-popul-city-item',
   templateUrl: './popul-city-item.component.html',
@@ -14,11 +16,22 @@ export class PopulCityItemComponent implements OnInit {
 
   cityData$!: Observable<WeatherDataCityCoordsInterfaceFiltered>;
 
-  constructor(private weatherCityInputSer: WeatherDataCityInputService) {}
+  constructor(
+    private weatherCityInputSer: WeatherDataCityInputService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.cityData$ = this.weatherCityInputSer.getWeatherDataWithCoords(
+    this.cityData$ = this.weatherCityInputSer.getWeatherDataWithInput(
       this.city
     );
+  }
+
+  navigateToCity(city: string) {
+    this.router.navigate(['city'], {
+      queryParams: {
+        city: city,
+      },
+    });
   }
 }

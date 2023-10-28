@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { WeatherDataCityCoordsInterfaceFiltered } from '../../../services/api/weather-data-types';
+import { WeatherDataCityCoordsInterfaceFiltered } from '../../services/api/weather-data-types';
 
 import { Observable } from 'rxjs';
 

@@ -1,4 +1,8 @@
-<span href="" *ngIf="cityData$ | async as data">
+<span
+  (click)="navigateToCity(data.city)"
+  href=""
+  *ngIf="cityData$ | async as data"
+>
   <div class="popular-city">
     <div class="popular-city__left mat-headline-5">
       <span>{{ data.city }}</span>

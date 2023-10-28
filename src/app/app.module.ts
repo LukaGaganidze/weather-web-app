@@ -11,10 +11,10 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModuleModule } from './material/material-module.module';
-import { CityWeatherComponent } from './pages/city-weather/current-focecast/city-weather.component';
+import { CityWeatherComponent } from './components/current-focecast/city-weather.component';
 import { HomeComponenet } from './pages/home-componenet/home-componenet.component';
 import { PopularCitiesComponent } from './components/popular-cities/popular-cities.component';
-import { FiveDayForecastComponent } from './pages/city-weather/five-day-forecast/five-day-forecast.component';
+import { FiveDayForecastComponent } from './components/five-day-forecast/five-day-forecast.component';
 import { CityWeatherMainComponenet } from './pages/city-weather/city-weather-main.componenet';
 import { SmallWeatherCardComponent } from './components/small-weather-card/small-weather-card.component';
 import { PopulCityItemComponent } from './components/popular-cities/popul-city-item/popul-city-item.component';

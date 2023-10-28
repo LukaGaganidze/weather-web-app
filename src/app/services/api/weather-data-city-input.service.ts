@@ -19,14 +19,13 @@ export class WeatherDataCityInputService {
 
   // RETURNS ONE CURRENT TIME AND DATE WEATHER
   // RECIEVES LAT AND LNG
-  getWeatherDataWithCoords(input: string) {
+  getWeatherDataWithInput(input: string) {
     return this.http
       .get<WeatherDataCityCoordsInterface>(
         `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${environment.apiKey}&units=metric`
       )
       .pipe(
         filter((data) => {
-          console.log(data);
           return data.sys.country !== undefined;
         }),
         map((data) => {

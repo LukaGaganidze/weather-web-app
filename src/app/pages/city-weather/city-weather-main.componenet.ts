@@ -33,6 +33,7 @@ export class CityWeatherMainComponenet implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    window.scrollTo(0, 0); // Scroll to the top of the page
     // accessing query params for lat and lng
     // the query params are send if we land on landing page and there are query params from geolocation api
     this.route.queryParams.subscribe((params) => {
@@ -42,6 +43,7 @@ export class CityWeatherMainComponenet implements OnInit {
       if (!lat || !lng) {
         this.router.navigate(['']);
       } else {
+        window.scrollTo(0, 0);
         const locationCoords: LatLngObj = {
           lat,
           lng,

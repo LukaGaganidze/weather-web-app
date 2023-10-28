@@ -77,3 +77,26 @@
 .custom-mat-form-field {
   transform: translateY(1.3rem) !important;
 }
+
+.input-container {
+  position: relative;
+}
+.err-message {
+  position: absolute;
+  bottom: -2.5rem;
+  color: red;
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  letter-spacing: 1px;
+  transform: translateX(-50%) translateY(-4.5rem);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease-in-out;
+}
+.err-message-active {
+  transform: translateX(-50%) translateY(0rem);
+  opacity: 1;
+  visibility: visible;
+}
