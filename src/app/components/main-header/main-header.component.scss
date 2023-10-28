@@ -2,12 +2,15 @@
 
 .background-container {
   // background-color: a.$color-primary-blue-dark;
+
   background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: rgba($color: a.$color-primary-white, $alpha: 0.8);
+
+  z-index: 100 !important;
 }
 
 .container {
