@@ -4,10 +4,11 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
 
-import { LatLngObj } from 'src/app/pages/city-weather/home-types';
+import { LatLngObj } from 'src/app/services/api/weather-data-types';
 import { filter, map } from 'rxjs';
 
 import { WeatherDataCityCoordsInterface } from './weather-data-types';
+
 import { WeatherDataCityCoordsInterfaceFiltered } from './weather-data-types';
 
 @Injectable({
@@ -16,6 +17,8 @@ import { WeatherDataCityCoordsInterfaceFiltered } from './weather-data-types';
 export class WeatherDataCityCoordsService {
   constructor(private http: HttpClient) {}
 
+  // RETURNS ONE CURRENT TIME AND DATE WEATHER
+  // RECIEVES LAT AND LNG
   getWeatherDataWithCoords(coords: LatLngObj) {
     return this.http
       .get<WeatherDataCityCoordsInterface>(
@@ -23,6 +26,7 @@ export class WeatherDataCityCoordsService {
       )
       .pipe(
         filter((data) => {
+          console.log(data);
           return data.sys.country !== undefined;
         }),
         map((data) => {

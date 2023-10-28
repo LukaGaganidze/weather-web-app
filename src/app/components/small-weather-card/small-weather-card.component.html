@@ -1,0 +1,34 @@
+<div class="card">
+  <span class="time mat-headline-4 card__time">{{ cardData.time }}</span>
+  <span class="card__description mat-headline-5">{{
+    cardData.weatherDesc
+  }}</span>
+
+  <div class="circel-wethaer-icon">
+    <div class="circel-wethaer-icon__temp">
+      <div class="mat-headline-6">
+        <span>Highest: </span>
+        <span>{{ cardData.maxTemp }}</span>
+      </div>
+
+      <div class="mat-headline-6">
+        <span>Lowest: </span>
+        <span>{{ cardData.minTemp }}</span>
+      </div>
+    </div>
+    <img
+      src="{{ url }}"
+      alt="Small Weather Icon"
+      class="circel-wethaer-icon__img"
+    />
+  </div>
+
+  <div class="clouds-container">
+    <div class="mat-headline-6 clouds-text">
+      <span>Clouds: </span>
+      <span>{{ cardData.clouds }}</span>
+    </div>
+
+    <img src="{{ cardData.icon }}" alt="weather icon" />
+  </div>
+</div>

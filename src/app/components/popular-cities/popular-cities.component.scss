@@ -1,0 +1,22 @@
+@use "../../../global-styles/abstracts" as a;
+@use "../../../global-styles/base" as b;
+
+.cntainer {
+  padding-bottom: 8rem;
+}
+
+.popular-city-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4rem;
+  row-gap: 2rem;
+
+  width: b.$container-large-width;
+  margin: 0 auto;
+}
+
+.main-heading {
+  width: b.$container-large-width;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}

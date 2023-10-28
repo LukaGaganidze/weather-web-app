@@ -1,0 +1,29 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.container {
+  padding: 8em 0;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 1500px;
+  max-width: b.$container-large-width;
+  margin: 0 auto;
+  justify-items: center;
+  row-gap: 4rem;
+  column-gap: 1rem;
+}
+
+.main-heding {
+  max-width: b.$container-large-width;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.weather-headline {
+  color: a.$color-secondary;
+  text-align: center;
+  margin-bottom: 1rem;
+}

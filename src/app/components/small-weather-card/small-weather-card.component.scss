@@ -1,0 +1,79 @@
+@use "../../../global-styles/abstracts" as a;
+@use "../../../global-styles/base" as b;
+
+.card {
+  max-width: 27rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+  background-color: #ebebeb;
+
+  &__description {
+    text-align: center;
+  }
+
+  &__time,
+  &__description {
+    margin: 0;
+  }
+}
+
+.circel-wethaer-icon {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  &__img {
+    width: 100%;
+    height: auto;
+    scale: 1.1;
+  }
+
+  &__temp {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    backdrop-filter: blur(30px);
+    width: 100%;
+    padding: 1rem 0;
+    color: a.$color-primary-white;
+
+    & div {
+      margin: 0;
+      padding: 0;
+
+      & span:first-child {
+      }
+    }
+  }
+}
+
+.clouds-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-top: solid a.$color-secondary 2px;
+  padding-top: 2rem;
+
+  & img {
+    border-radius: 50%;
+    background-color: a.$color-secondary;
+    width: 5rem;
+  }
+}
+
+.clouds-text {
+  margin-bottom: 0;
+  color: a.$color-secondary;
+  font-weight: 600;
+
+  & span:first-child {
+    letter-spacing: 1px;
+  }
+}

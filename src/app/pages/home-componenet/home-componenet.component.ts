@@ -13,7 +13,6 @@ export class HomeComponenet implements OnInit {
       navigator.geolocation.getCurrentPosition(
         (position: GeolocationPosition) => {
           if (position) {
-            console.log(position);
             const queryParams = {
               lat: position.coords.latitude,
               lng: position.coords.longitude,

@@ -1,0 +1,10 @@
+<div class="cntainer">
+  <h2 class="main-heading mat-headline-3">Popular Cities on Platform</h2>
+
+  <div class="popular-city-grid">
+    <app-popul-city-item
+      *ngFor="let city of cities"
+      [cityName]="city"
+    ></app-popul-city-item>
+  </div>
+</div>

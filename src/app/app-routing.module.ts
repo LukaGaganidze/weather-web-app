@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CityWeatherComponent } from './pages/city-weather/city-weather.component';
+import { CityWeatherMainComponenet } from './pages/city-weather/city-weather-main.componenet';
+
 import { HomeComponenet } from './pages/home-componenet/home-componenet.component';
 
 const routes: Routes = [
@@ -10,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'location',
-    component: CityWeatherComponent,
+    component: CityWeatherMainComponenet,
   },
 ];
 

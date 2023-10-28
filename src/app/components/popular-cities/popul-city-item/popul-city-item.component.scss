@@ -1,0 +1,41 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.popular-city {
+  background-color: a.$color-primary-blue;
+  color: a.$color-primary-white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  border-radius: 0.8rem;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &__left {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+
+    & span:first-child {
+      color: a.$color-secondary;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+
+    & img {
+      width: 5rem;
+      height: auto;
+    }
+  }
+}
+
+.popular-city:hover {
+  background-color: a.$color-primary-blue-dark;
+  transform: translateY(-0.8rem) scale(1.03);
+}

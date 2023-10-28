@@ -1,0 +1,13 @@
+<span href="" *ngIf="cityData$ | async as data">
+  <div class="popular-city">
+    <div class="popular-city__left mat-headline-5">
+      <span>{{ data.city }}</span>
+      <span>{{ data.temp }}</span>
+      <span>{{ data.weather }}</span>
+    </div>
+    <div class="popular-city__right mat-headline-5">
+      <span>{{ data.clouds }}</span>
+      <img src="{{ data.icon_url }}" alt="wether codition icon" />
+    </div>
+  </div>
+</span>

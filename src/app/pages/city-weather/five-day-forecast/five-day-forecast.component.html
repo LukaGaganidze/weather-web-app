@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="fiveDaysForecast$ | async as data">
+    <h2 class="main-heding mat-headline-3">Forecast For Next Days</h2>
+    <div class="forecast-grid">
+      <div *ngFor="let iconData of data">
+        <p class="weather-headline mat-headline-4">{{ iconData.day }}</p>
+        <app-small-weather-card [cardData]="iconData"></app-small-weather-card>
+      </div>
+    </div>
+  </div>
+</div>

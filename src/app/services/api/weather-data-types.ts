@@ -1,3 +1,9 @@
+export interface LatLngObj {
+  lat: number;
+  lng: number;
+}
+
+// initial data from server
 export interface WeatherDataCityCoordsInterface {
   base: string;
   clouds: { all: number };
@@ -41,6 +47,7 @@ export interface WeatherDataCityCoordsInterface {
     speed: number;
   };
 }
+// filtered  and mapped data
 export interface WeatherDataCityCoordsInterfaceFiltered {
   temp: string;
   feels_like: string;
@@ -60,4 +67,65 @@ export interface WeatherDataCityCoordsInterfaceFiltered {
   weather_desc: string;
   icon_url: string;
   city: string;
+}
+
+// initial data from server
+export interface WeatherDataForFiveDaysFromServer {
+  city: {
+    coord: { lat: number; lon: number };
+    country: string;
+    id: number;
+    name: string;
+    population: number;
+    sunrise: number;
+    sunset: number;
+    timezone: number;
+  };
+  cnt: number;
+  cod: string;
+  list: {
+    clouds: {
+      all: number;
+    };
+    dt: number;
+    dt_txt: string;
+    main: {
+      feels_like: number;
+      grnd_level: number;
+      humidity: number;
+      pressure: number;
+      sea_level: number;
+      temp: number;
+      temp_kf: number;
+      temp_max: number;
+      temp_min: number;
+    };
+    pop: number;
+    sys: {
+      pod: string;
+    };
+    weather: {
+      description: string;
+      icon: string;
+      id: number;
+      main: string;
+    }[];
+
+    wind: {
+      deg: number;
+      gust: number;
+      speed: number;
+    };
+  }[];
+}
+
+export interface WeatherDataForFiveDaysFromServerFiltered {
+  clouds: string;
+  day: string;
+  maxTemp: string;
+  minTemp: string;
+  weatherDesc: string;
+  weatherMain: string;
+  icon: string;
+  time: string;
 }
