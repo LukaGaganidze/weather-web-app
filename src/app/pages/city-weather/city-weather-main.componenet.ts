@@ -21,7 +21,6 @@ export class CityWeatherMainComponenet implements OnInit {
   // for current day weather
   mainData$!: Observable<WeatherDataCityCoordsInterfaceFiltered>;
   dynamicBackgroundValCur = '';
-
   // for future 5  days weather
   fiveDaysData$!: Observable<WeatherDataForFiveDaysFromServerFiltered[]>;
 
