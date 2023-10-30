@@ -1,0 +1,46 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+// .menu {
+//   display: none;
+// }
+.container {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 7.5rem;
+  width: 100%;
+  z-index: 1;
+  background-color: a.$color-primary-blue;
+  color: a.$color-primary-white;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  height: 0rem;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+.menu {
+  width: b.$container-large-width;
+  margin: 0 auto;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  & span {
+    padding: 1rem;
+    display: block;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    width: max-content;
+
+    &:hover {
+      color: a.$color-secondary;
+    }
+  }
+}
+
+.container.menuActive {
+  opacity: 1;
+  visibility: visible;
+  height: 16rem;
+}

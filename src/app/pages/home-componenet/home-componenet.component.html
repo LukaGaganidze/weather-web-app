@@ -1,1 +1,45 @@
-<p>home-componenet works!</p>
+<div class="home-page-container">
+  <div class="hero-container">
+    <div class="hero-content-container">
+      <img
+        class="main-logo"
+        src="../../../assets/logos/logo-white.png"
+        alt="white logo"
+      />
+      <div class="hero-content">
+        <!-- main content -->
+        <div class="main-weather-content">
+          <form
+            (ngSubmit)="submitInput()"
+            [formGroup]="inputForm"
+            class="input-form"
+          >
+            <mat-form-field color="accent" class="input-box">
+              <mat-label>City</mat-label>
+              <input
+                #inputElement
+                formControlName="cityInput"
+                matInput
+                placeholder="Name Of The City"
+              />
+            </mat-form-field>
+            <button
+              class="mat-headline-5 search-btn"
+              mat-stroked-button
+              color="accent"
+              type="submit"
+            >
+              Search
+            </button>
+
+            <span
+              class="mat-headline-6 err-message"
+              [ngClass]="{ 'err-message-active': inputError }"
+              >city not found</span
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

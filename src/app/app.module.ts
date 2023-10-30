@@ -19,6 +19,7 @@ import { CityWeatherMainComponenet } from './pages/city-weather/city-weather-mai
 import { SmallWeatherCardComponent } from './components/small-weather-card/small-weather-card.component';
 import { PopulCityItemComponent } from './components/popular-cities/popul-city-item/popul-city-item.component';
 import { CityWeatherInputComponent } from './pages/city-weather-input/city-weather-input.component';
+import { DropdownCitiesComponent } from './components/main-header/dropdown-cities/dropdown-cities.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CityWeatherInputComponent } from './pages/city-weather-input/city-weath
     SmallWeatherCardComponent,
     PopulCityItemComponent,
     CityWeatherInputComponent,
+    DropdownCitiesComponent,
   ],
   imports: [
     BrowserModule,

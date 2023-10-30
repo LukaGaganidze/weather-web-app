@@ -1,0 +1,8 @@
+<div [ngClass]="{ menuActive: activeState }" class="container">
+  <ul class="menu">
+    <li *ngFor="let city of cities">
+      <span (click)="navigateToCity(city)">{{ city }}</span>
+    </li>
+  </ul>
+</div>
+<!-- " -->

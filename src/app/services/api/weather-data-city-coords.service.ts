@@ -26,7 +26,6 @@ export class WeatherDataCityCoordsService {
       )
       .pipe(
         filter((data) => {
-          console.log(data);
           return data.sys.country !== undefined;
         }),
         map((data) => {

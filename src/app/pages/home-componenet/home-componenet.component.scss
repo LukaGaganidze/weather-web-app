@@ -1,0 +1,81 @@
+@use "../../../global-styles/abstracts" as a;
+@use "../../../global-styles/base" as b;
+
+.hero-container {
+  margin-bottom: 5rem;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("../../../assets/pages/home/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-logo {
+  display: block;
+  width: 8rem;
+  margin: 0 auto;
+  padding-top: 9rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content-container {
+  width: b.$container-default-width;
+  margin: 0 auto;
+  padding-bottom: 8rem;
+}
+
+.hero-content {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+  background-image: url(../../../assets/pages/home/weather-types/Thunderstorm-sq.jpg);
+}
+
+.main-weather-content {
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+  // background-color: rgba($color: a.$color-primary-white, $alpha: 0.7);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: grid;
+  color: a.$color-primary-white;
+}
+
+.input-form {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  position: relative;
+}
+
+.input-box {
+  width: 100%;
+}
+
+.search-btn {
+  padding: 3rem;
+  margin: 0;
+  transform: translateY(-1rem);
+}
+
+.err-message {
+  position: absolute;
+  bottom: -2.8rem;
+  left: 1rem;
+  color: red;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.err-message-active {
+  opacity: 1;
+  visibility: visible;
+}

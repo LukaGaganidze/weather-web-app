@@ -7,7 +7,7 @@
         alt="white logo"
       />
       <div
-        *ngIf="mainData$ | async as data; else loading"
+        *ngIf="mainData$ | async as data"
         class="hero-content"
         [style.background-image]="getBackgroundImage()"
       >
@@ -39,15 +39,17 @@
             <div class="add-tobookmars">
               <div class="mat-body-strongadd-title">Add To Bookmarks</div>
               <button
+                (click)="addToBookmarks(data.city)"
                 mat-fab
                 color="accent"
                 class="button-bookmark"
                 aria-label="bookmark icon button with a bookmark icon"
               >
-                <!-- <mat-icon class="bookmark-icon">bookmark</mat-icon> -->
-                <mat-icon class="material-symbols-outlined">
+                <mat-icon *ngIf="cityAdded" class="bookmark-icon"
+                  >bookmark</mat-icon
+                >
+                <mat-icon *ngIf="!cityAdded" class="material-symbols-outlined">
                   bookmark_add
-                  <!-- check_circle -->
                 </mat-icon>
               </button>
             </div>
@@ -108,8 +110,6 @@
           </div>
         </div>
       </div>
-
-      <ng-template #loading>Loading data...</ng-template>
     </div>
   </div>
 </div>

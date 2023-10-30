@@ -1,13 +1,18 @@
 <div class="background-container">
   <div class="container">
     <div class="nav-container">
-      <a class="logo-link">
+      <a routerLink="" class="logo-link">
         <img src="../../../assets/logos/logo-black.png" alt="logo" />
       </a>
 
       <div class="links-container">
-        <a
-          ><span>Georgian Cities</span>
+        <div
+          class="drow-down"
+          (mouseenter)="georgianCitiesStateContol(true)"
+          (mouseleave)="georgianCitiesStateContol(false)"
+          [ngClass]="{ 'drow-down-active': georgianCitiesActive }"
+        >
+          <span>Georgian Cities</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -22,8 +27,17 @@
               d="M8.25 4.5l7.5 7.5-7.5 7.5"
             />
           </svg>
-        </a>
-        <a>
+          <app-dropdown-cities
+            [activeState]="georgianCitiesActive"
+            [cities]="georgianCities"
+          ></app-dropdown-cities>
+        </div>
+        <div
+          class="drow-down"
+          (mouseenter)="worldwideCitiesStateContol(true)"
+          (mouseleave)="worldwideCitiesStateContol(false)"
+          [ngClass]="{ 'drow-down-active': worldwideCitiesActive }"
+        >
           <span>Worldwide Cities </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +53,11 @@
               d="M8.25 4.5l7.5 7.5-7.5 7.5"
             />
           </svg>
-        </a>
+          <app-dropdown-cities
+            [activeState]="worldwideCitiesActive"
+            [cities]="worldwideCities"
+          ></app-dropdown-cities>
+        </div>
       </div>
 
       <form
@@ -65,16 +83,51 @@
             <mat-icon color="accent" matSuffix>search</mat-icon>
           </mat-form-field>
         </div>
-        <button
-          mat-fab
-          color="accent"
-          class="button-bookmark"
-          aria-label="bookmark icon button with a bookmark icon"
-        >
-          <!-- <mat-icon class="bookmark-icon">bookmark</mat-icon> -->
-          <mat-icon class="bookmark-icon">bookmark_border</mat-icon>
-        </button>
+
+        <!-- bookmarks button -->
+        <div class="bookmark-container" (mouseleave)="closeDropdownDelay()">
+          <button
+            mat-fab
+            color="accent"
+            class="button-bookmark"
+            aria-label="bookmark icon button with a bookmark icon"
+            type="button"
+            (click)="toggleDropdown()"
+          >
+            <mat-icon *ngIf="bookmarkEmpty" class="bookmark-icon"
+              >bookmark</mat-icon
+            >
+            <mat-icon *ngIf="!bookmarkEmpty" class="bookmark-icon"
+              >bookmark_border</mat-icon
+            >
+          </button>
+
+          <div [ngClass]="{ activeDropdown: bokkmarkIsOpen }" class="dropdown">
+            <!-- citties dropdiwn -->
+            <div *ngIf="citiest.length > 0" class="bookmarked-cities-container">
+              <div class="for-structure"></div>
+              <p>Favorite Cities</p>
+              <ul class="dropdown-ul">
+                <li *ngFor="let city of citiest">
+                  <span (click)="navigateToSavedCity(city)">{{ city }}</span>
+                </li>
+              </ul>
+            </div>
+            <!-- if there are no cities -->
+            <div *ngIf="citiest.length < 1">
+              <div class="no-citties-dropdown">
+                <span
+                  >Your list of favorite cities is looking a bit lonely!
+                </span>
+                <span>Add cities and they will appear here!</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>
 </div>
+
+<!--  -->
+<!-- -->
