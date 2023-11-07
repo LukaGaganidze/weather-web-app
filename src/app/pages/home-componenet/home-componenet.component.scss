@@ -2,6 +2,7 @@
 @use "../../../global-styles/base" as b;
 
 .hero-container {
+  padding: 0 1rem;
   margin-bottom: 5rem;
   background-image: linear-gradient(
       to bottom,
@@ -23,7 +24,7 @@
 }
 
 .hero-content-container {
-  width: b.$container-default-width;
+  max-width: b.$container-default-width;
   margin: 0 auto;
   padding-bottom: 8rem;
 }
@@ -78,4 +79,37 @@
 .err-message-active {
   opacity: 1;
   visibility: visible;
+}
+
+@media (max-width: 1100px) {
+  .hero-content {
+    padding: 8rem 4rem;
+  }
+}
+@media (max-width: 700px) {
+  .hero-content {
+    padding: 4rem 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .hero-content {
+    padding: 4rem 1rem;
+  }
+
+  .input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    & button {
+      width: 100%;
+      font-size: 2rem;
+      padding: 2rem 0;
+    }
+  }
+
+  .err-message {
+    position: absolute;
+    bottom: -3.6rem;
+  }
 }

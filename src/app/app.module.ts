@@ -20,6 +20,9 @@ import { SmallWeatherCardComponent } from './components/small-weather-card/small
 import { PopulCityItemComponent } from './components/popular-cities/popul-city-item/popul-city-item.component';
 import { CityWeatherInputComponent } from './pages/city-weather-input/city-weather-input.component';
 import { DropdownCitiesComponent } from './components/main-header/dropdown-cities/dropdown-cities.component';
+import { MobileNavComponent } from './components/main-header/mobile-nav/mobile-nav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MobileNavBarComponent } from './components/mobile-nav-bar/mobile-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { DropdownCitiesComponent } from './components/main-header/dropdown-citie
     PopulCityItemComponent,
     CityWeatherInputComponent,
     DropdownCitiesComponent,
+    MobileNavComponent,
+    MobileNavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +47,7 @@ import { DropdownCitiesComponent } from './components/main-header/dropdown-citie
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModuleModule,
+    MatToolbarModule,
 
     FormsModule,
     ReactiveFormsModule,

@@ -22,7 +22,6 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
   bookmarkEmpty = true;
   bokkmarkIsOpen = false;
 
-  // colorControl = new FormControl('primary' as ThemePalette);
   inputForm!: FormGroup;
   @ViewChild('inputElement') inputElement!: ElementRef;
 

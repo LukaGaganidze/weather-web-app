@@ -1,0 +1,27 @@
+.mobile-nav {
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  display: none;
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.logo-container {
+  width: 3rem;
+  height: 3rem;
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 1050px) {
+  .mobile-nav {
+    display: flex;
+  }
+}

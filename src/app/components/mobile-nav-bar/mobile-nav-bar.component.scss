@@ -1,0 +1,96 @@
+@use "../../../global-styles/abstracts/colors" as a;
+
+.mobile-nav-contianer {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(110%);
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.4s ease;
+  background-color: #f5f5f5;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.mobile-nav-contianer.active {
+  transform: translate(0);
+  z-index: 1000;
+}
+
+.logo {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+  top: 0rem;
+  left: 50%;
+  opacity: 0.5;
+
+  & img {
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+.nav-item {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: a.$color-primary-blue;
+  color: a.$color-primary-white;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.nav-item.active {
+  background-color: a.$color-primary-blue-dark;
+
+  & span {
+    scale: 1.15;
+  }
+}
+
+.nav-item:not(:last-child) {
+  border-bottom: solid #f5f5f5 2px;
+}
+
+.input-box {
+  text-align: center;
+  color: a.$color-secondary;
+  background-color: a.$color-secondary;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.input-box::after {
+  content: "Enter the name of the city";
+  position: absolute;
+  color: a.$color-primary-blue;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0.7rem;
+}
+
+.city-main-input {
+  width: 100%;
+}
+
+.example-form {
+  // max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

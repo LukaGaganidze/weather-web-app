@@ -2,6 +2,7 @@
 @use "../../../global-styles/base" as b;
 
 .hero-container {
+  padding: 0 1rem;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.4),
@@ -22,7 +23,7 @@
 }
 
 .hero-content-container {
-  width: b.$container-default-width;
+  max-width: b.$container-default-width;
   margin: 0 auto;
   padding-bottom: 8rem;
 }
@@ -107,5 +108,63 @@
 
   &:not(:last-child) {
     border-bottom: solid rgba($color: a.$color-secondary, $alpha: 0.5) 2px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .hero-content {
+    padding: 5rem;
+  }
+
+  .main-weather-content {
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    color: a.$color-primary-white;
+    row-gap: 4rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .details-box {
+    grid-template-columns: 1fr;
+  }
+
+  .country-n-city {
+    margin-bottom: 0rem;
+    & p {
+      font-size: 2rem;
+    }
+  }
+
+  .weatherDeg-n-logo {
+    & p {
+      font-size: 3.5rem;
+    }
+  }
+
+  .hero-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .country-n-city {
+    & p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .weatherDeg-n-logo {
+    & p {
+      font-size: 2.4rem;
+    }
+  }
+
+  .hero-content {
+    padding: 1rem;
   }
 }
