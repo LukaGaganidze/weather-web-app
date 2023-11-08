@@ -1,0 +1,16 @@
+<div [ngClass]="{ active: listState }" class="cities-dropdown">
+  <div (click)="closeList()" class="back-to-main-menu">
+    <span> &#171; </span>
+  </div>
+  <ul *ngIf="cities.length !== 0" class="list-container">
+    <li (click)="navigateToCity(city)" class="ct" *ngFor="let city of cities">
+      {{ city }}
+    </li>
+  </ul>
+
+  <div *ngIf="cities.length === 0" class="optional">
+    <span>Discover Cities</span>
+    <span>Bookmark Them</span>
+    <span>And They will be saved here</span>
+  </div>
+</div>

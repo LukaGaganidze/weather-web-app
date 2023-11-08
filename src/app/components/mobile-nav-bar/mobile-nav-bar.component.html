@@ -1,9 +1,16 @@
 <div class="mobile-nav-contianer" [ngClass]="{ active: menuState }">
+  <div (click)="closeMenu()" class="close-btn">&#10005;</div>
   <div class="logo">
     <img src="../../../assets/logos/logo-black.png" />
   </div>
 
   <div class="input-box">
+    <div *ngIf="errorMessige === ''" class="desc-text">
+      Enter the name of the city
+    </div>
+    <div style="color: red" *ngIf="errorMessige !== ''" class="desc-text">
+      {{ errorMessige }}
+    </div>
     <!-- input -->
     <form
       (ngSubmit)="submitInput()"
@@ -22,14 +29,20 @@
     </form>
   </div>
 
-  <!--  fav cities  -->
-  <div class="nav-item mat-h2 active">
-    <span> Favorite Cities </span>
+  <!--  Georgian cities  -->
+  <div (click)="dropdownCities('geo')" class="nav-item mat-h2">
+    Georgian Cities
   </div>
 
-  <!--  Georgian cities  -->
-  <div class="nav-item mat-h2">Georgian Cities</div>
-
   <!--  Worldwide cities  -->
-  <div class="nav-item mat-h2">Worldwide Cities</div>
+  <div (click)="dropdownCities('wrld')" class="nav-item mat-h2">
+    Worldwide Cities
+  </div>
+
+  <!--  fav cities  -->
+  <div (click)="dropdownCities('saved')" class="nav-item mat-h2 active">
+    <span> Favorite Cities </span>
+  </div>
 </div>
+
+<app-cities-fropdown></app-cities-fropdown>

@@ -17,6 +17,36 @@
   box-sizing: border-box;
 }
 
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  height: 2rem;
+  width: 2rem;
+  font-size: 2.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  opacity: 0.5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+}
+
+.close-btn:hover,
+.close-btn:active {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.262);
+}
+
 .mobile-nav-contianer.active {
   transform: translate(0);
   z-index: 1000;
@@ -27,9 +57,10 @@
   width: 10rem;
   height: 10rem;
   margin: 0 auto;
-  top: 0rem;
+  top: 3rem;
   left: 50%;
   opacity: 0.5;
+  z-index: -1;
 
   & img {
     transform: translateX(-50%);
@@ -67,12 +98,10 @@
   background-color: a.$color-secondary;
   padding: 1rem;
   margin-bottom: 3rem;
-  border-radius: 1rem;
   position: relative;
 }
 
-.input-box::after {
-  content: "Enter the name of the city";
+.desc-text {
   position: absolute;
   color: a.$color-primary-blue;
   font-size: 2rem;
@@ -93,4 +122,13 @@
 
 .example-full-width {
   width: 100%;
+}
+
+@media (max-width: 400px) {
+  .nav-item {
+    font-size: 2rem;
+  }
+  .input-box::after {
+    font-size: 1.5rem;
+  }
 }

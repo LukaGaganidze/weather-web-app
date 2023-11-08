@@ -128,6 +128,12 @@
   }
 }
 
+@media (max-width: 1050px) {
+  .main-logo {
+    padding-top: 8rem;
+  }
+}
+
 @media (max-width: 610px) {
   .details-box {
     grid-template-columns: 1fr;
@@ -154,7 +160,7 @@
 @media (max-width: 610px) {
   .country-n-city {
     & p {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   }
 

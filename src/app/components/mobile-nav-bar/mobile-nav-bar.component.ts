@@ -40,6 +40,10 @@ export class MobileNavBarComponent implements OnInit {
     });
   }
 
+  closeMenu() {
+    this.mobileSer.closeMenu();
+  }
+
   submitInput() {
     if (this.inputForm.valid) {
       const countryInput: string = this.inputForm.value.cityInput;
@@ -56,6 +60,7 @@ export class MobileNavBarComponent implements OnInit {
             }
             this.inputForm.reset();
             this.inputElement.nativeElement.blur();
+            this.mobileSer.closeMenu();
           },
           (err) => {
             this.inputError = true;
@@ -67,5 +72,9 @@ export class MobileNavBarComponent implements OnInit {
           }
         );
     }
+  }
+
+  dropdownCities(type: string) {
+    this.mobileSer.citiesStaticDataManager(type);
   }
 }

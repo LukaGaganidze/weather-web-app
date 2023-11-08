@@ -23,6 +23,7 @@ import { DropdownCitiesComponent } from './components/main-header/dropdown-citie
 import { MobileNavComponent } from './components/main-header/mobile-nav/mobile-nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MobileNavBarComponent } from './components/mobile-nav-bar/mobile-nav-bar.component';
+import { CitiesFropdownComponent } from './components/mobile-nav-bar/cities-fropdown/cities-fropdown.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MobileNavBarComponent } from './components/mobile-nav-bar/mobile-nav-ba
     DropdownCitiesComponent,
     MobileNavComponent,
     MobileNavBarComponent,
+    CitiesFropdownComponent,
   ],
   imports: [
     BrowserModule,
