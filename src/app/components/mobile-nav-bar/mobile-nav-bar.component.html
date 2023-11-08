@@ -5,10 +5,8 @@
   </div>
 
   <div class="input-box">
-    <div *ngIf="errorMessige === ''" class="desc-text">
-      Enter the name of the city
-    </div>
-    <div style="color: red" *ngIf="errorMessige !== ''" class="desc-text">
+    <div *ngIf="!inputError" class="desc-text">Enter the name of the city</div>
+    <div style="color: red" *ngIf="inputError" class="desc-text">
       {{ errorMessige }}
     </div>
     <!-- input -->
