@@ -10,7 +10,7 @@
 
   <div *ngIf="cities.length === 0" class="optional">
     <span>Discover Cities</span>
-    <span>Bookmark Them</span>
-    <span>And They will be saved here</span>
+    <span (click)="closeList()">Add Favorites</span>
+    <span>And You Will Find Them Here</span>
   </div>
 </div>

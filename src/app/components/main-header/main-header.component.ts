@@ -108,6 +108,16 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
   submitInput() {
     if (this.inputForm.valid) {
       const countryInput: string = this.inputForm.value.cityInput;
+
+      if (this.includesNumbers(countryInput)) {
+        this.inputError = true;
+        setTimeout(() => {
+          this.inputError = false;
+        }, 2000);
+        this.inputForm.reset();
+        return;
+      }
+
       this.inputSubscription = this.cityWeatherSer
         .getWeatherDataWithInput(countryInput)
         .subscribe(
@@ -164,5 +174,10 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.inputSubscription.unsubscribe();
+  }
+
+  private includesNumbers(input: string): boolean {
+    const regex = /\d/; // Regular expression to match any digit (0-9)
+    return regex.test(input);
   }
 }

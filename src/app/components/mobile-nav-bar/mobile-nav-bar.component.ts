@@ -47,6 +47,17 @@ export class MobileNavBarComponent implements OnInit {
   submitInput() {
     if (this.inputForm.valid) {
       const countryInput: string = this.inputForm.value.cityInput;
+
+      if (this.includesNumbers(countryInput)) {
+        this.inputError = true;
+        this.errorMessige = 'City Not Found';
+        setTimeout(() => {
+          this.inputError = false;
+        }, 2000);
+        this.inputForm.reset();
+        return;
+      }
+
       this.inputSubscription = this.cityWeatherSer
         .getWeatherDataWithInput(countryInput)
         .subscribe(
@@ -76,5 +87,10 @@ export class MobileNavBarComponent implements OnInit {
 
   dropdownCities(type: string) {
     this.mobileSer.citiesStaticDataManager(type);
+  }
+
+  private includesNumbers(input: string): boolean {
+    const regex = /\d/; // Regular expression to match any digit (0-9)
+    return regex.test(input);
   }
 }

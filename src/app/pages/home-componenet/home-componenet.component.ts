@@ -19,6 +19,8 @@ export class HomeComponenet implements OnInit, OnDestroy {
   inputForm!: FormGroup;
   @ViewChild('inputElement') inputElement!: ElementRef;
 
+  textInput: string = '';
+
   // error case
   inputError = false;
   errorMessige = '';
@@ -60,6 +62,16 @@ export class HomeComponenet implements OnInit, OnDestroy {
   submitInput() {
     if (this.inputForm.valid) {
       const countryInput: string = this.inputForm.value.cityInput;
+
+      if (this.includesNumbers(countryInput)) {
+        this.inputError = true;
+        setTimeout(() => {
+          this.inputError = false;
+        }, 2000);
+        this.inputForm.reset();
+        return;
+      }
+
       this.inputSubscription = this.cityWeatherSer
         .getWeatherDataWithInput(countryInput)
         .subscribe(
@@ -84,6 +96,11 @@ export class HomeComponenet implements OnInit, OnDestroy {
           }
         );
     }
+  }
+
+  private includesNumbers(input: string): boolean {
+    const regex = /\d/; // Regular expression to match any digit (0-9)
+    return regex.test(input);
   }
   ngOnDestroy(): void {
     if (this.inputSubscription) {
